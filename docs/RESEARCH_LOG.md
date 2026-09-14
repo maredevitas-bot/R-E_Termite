@@ -7,6 +7,7 @@
 - `README.md`: 저장소의 짧은 소개와 현재 연구 목표
 - `docs/RESEARCH_LOG.md`: 날짜별 탐구 과정과 의사결정 기록
 - `docs/RESEARCH_DIRECTION.md`: 현재 확정된 연구 방향 정리
+- `docs/MODEL_GUIDED_RESEARCH.md`: 공개 데이터 → 계산모형 → 실험설계 → 실측 보정의 반복 구조
 - `docs/PAPERS.md`: 주요 논문별 핵심 내용과 우리 연구와의 연결
 - `docs/EXPERIMENTS.md`: 실험 설계 및 수행 기록
 - `analysis/`: AI 추적·네트워크·최적화 코드
@@ -34,6 +35,23 @@
 
 ## 기록
 
+### 2026-09-14 — 모델 유도형 실험설계 방향 추가
+
+- 과학전람회처럼 실험 시간이 짧은 상황에서 `생물 실험 완료 → 규칙 발견 → 알고리즘 개발`의 직렬 구조는 리스크가 크다고 판단.
+- 기존 공개 흰개미 행동 데이터(Paiva, Manduca 등)로 **V0 계산모형**을 먼저 구축하고, 자체 trophallaxis 데이터가 들어올 때마다 모델을 보정하는 병렬 구조로 변경.
+- V0는 실제 물류 알고리즘이 아니라 **Literature/Data-Constrained Termite Model**로 명확히 구분.
+- 자체 먹이전달 데이터가 확보되면 **V1: Empirically Calibrated Termite Logistics Model**로 보정.
+- 여러 군체에서 반복적으로 확인된 규칙만 일반화하여 **V2: Empirically Derived Distributed Dynamic Priority Allocation Algorithm**으로 확장하기로 함.
+- 알고리즘을 단순 최종 산출물이 아니라 **연구 정확도를 높이는 중간 도구**로 사용하기로 함.
+- 모델을 이용해 다음을 수행할 계획:
+  - 중요한 측정 변수 선별
+  - 필요한 fps·촬영시간 등 촬영조건 최적화
+  - 경쟁 가설이 가장 크게 갈리는 실험조건 선택
+  - 필요한 독립 군체·반복 수 추정
+  - 희귀 trophallaxis event를 우선 선별하는 active learning
+  - 모델 residual을 이용한 새로운 생물학적 질문 탐색
+- 전체 방법론을 **Model-Guided Experimental Design**으로 정리하고 `docs/MODEL_GUIDED_RESEARCH.md`에 별도 문서화함.
+
 ### 2026-09-14 — 저장소 구조 재정리
 
 - 긴 연구 정리문을 `README.md` 하나에 모두 넣는 방식에서 분리형 구조로 변경.
@@ -57,9 +75,11 @@
 
 ### 다음 기록 항목
 
+- V0 공개 데이터 재현 및 baseline simulator 구축
 - 왕·여왕 포함 군체 확보 가능성
 - trophallaxis 자동 검출 기준
 - 개체 장기 ID tracking 방식
 - 관찰 챔버 프로토타입
 - 왕/여왕 급식 일개미 전문화 여부 실험
+- V0 → V1 보정 기준과 독립 검증 데이터 분리
 - 실제 데이터 기반 priority allocation 모델 설계
