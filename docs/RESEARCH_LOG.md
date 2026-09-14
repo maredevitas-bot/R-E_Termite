@@ -9,6 +9,7 @@
 - `docs/RESEARCH_LOG.md`: 날짜별 탐구 과정과 의사결정 기록
 - `docs/RESEARCH_DIRECTION.md`: 사회적 물류망·생식위계·우선순위 할당 중심의 상세 연구 방향
 - `docs/MODEL_GUIDED_RESEARCH.md`: 공개 데이터 → 계산모형 → 실험설계 → 실측 보정의 반복 구조
+- `docs/SHORTEST_PATH_PLAN.md`: 첫 완결 연구 루프를 가장 빠르게 만드는 최단경로 계획
 - `docs/PAPERS.md`: 주요 논문별 핵심 내용과 우리 연구와의 연결
 - `docs/EXPERIMENTS.md`: 실험 설계 및 수행 기록
 - `analysis/`: AI 추적·네트워크·모델링·최적화 코드
@@ -38,6 +39,22 @@
 ---
 
 ## 기록
+
+### 2026-09-14 — 최단경로 연구계획 추가
+
+- 연구기간을 줄이기 위해 `군체 확보 → 촬영 → 추적 → 행동검출 → 모델링 → 알고리즘`을 순차적으로 기다리는 구조를 피하기로 함.
+- **공개 데이터 기반 V0 계산모형**, **소규모 자체 흰개미 파일럿**, **tracking/contact/trophallaxis 데이터 파이프라인**을 병렬 진행하도록 계획.
+- 초기 최소 완성선을 `Contact Network + 실제 trophallaxis Logistics Network + V0 예측 비교`로 설정.
+- 첫 통합 질문을 **“사회적 접촉망만으로 실제 trophallaxis 물류망을 얼마나 예측할 수 있는가?”**로 둠.
+- 초기에는 왕·여왕, 질소 직접 분석, 생식위계 변화, 완전 자동 AI, 복잡한 GNN/강화학습, 실제 Physical AI 로봇 구현을 필수 경로에서 제외.
+- AI는 처음부터 완전자동 행동 판별기로 만들기보다 `근접/상호작용 후보 추출 → 짧은 영상 클립 → 사람 검증`의 Human-in-the-Loop 방식으로 사용.
+- 첫 파일럿 Go/No-Go 기준을 다음 세 가지로 설정:
+  1. 개체 ID를 필요한 시간 동안 유지할 수 있는가?
+  2. 영상에서 trophallaxis를 사람이 일관되게 판별할 수 있는가?
+  3. 분석 가능한 빈도로 trophallaxis event가 발생하는가?
+- 촬영은 `30분 → 2시간 → 반나절 → 장기 촬영` 식으로 단계적으로 확대하고, 각 단계에서 문제를 즉시 수정하기로 함.
+- 8주 기준 예시 계획을 작성하되 절대적인 기간이 아니라 **첫 Observation → Model → Prediction → Experiment → Revision 루프를 최대한 빨리 완성하는 순서**로 사용.
+- 세부 계획을 `docs/SHORTEST_PATH_PLAN.md`에 별도 기록.
 
 ### 2026-09-14 — 상위 프레임을 ‘사회적 위장·분산 생리’로 확장
 
@@ -98,6 +115,8 @@
 
 ### 다음 기록 항목
 
+- 최단경로 Track A/B/C 실제 시작일과 진행 상태
+- 첫 30분 / 2시간 pilot 결과
 - Paiva / Manduca 공개 데이터 접근 및 재현 가능성
 - V0 interaction model과 baseline simulator 구축
 - trophallaxis 수동 판정 기준 및 라벨링 일치도
