@@ -71,6 +71,24 @@ V1 Empirically Calibrated Logistics Model
 
 알고리즘은 최종 산출물일 뿐 아니라 **변수 선정, 촬영조건 최적화, 경쟁 가설 구분, 표본설계, rare-event 탐색을 돕는 중간 연구도구**로 사용한다.
 
+### 최단경로 초기 완성선
+
+초기에는 장기 목표 전체를 동시에 구현하지 않고 다음 루프를 우선 완성한다.
+
+```text
+공개 데이터 기반 V0
+        +
+소규모 자체 영상
+        ↓
+Contact Network + Trophallaxis/Logistics Network
+        ↓
+V0 예측과 실제 물류망 비교
+        ↓
+모델 오차 기반 다음 실험 설계
+```
+
+세부 계획은 [`docs/SHORTEST_PATH_PLAN.md`](docs/SHORTEST_PATH_PLAN.md)에 기록한다.
+
 ---
 
 ## Repository 구조
@@ -90,6 +108,8 @@ R-E_Termite/
 │   │   └─ 사회적 물류망·우선순위 할당 중심의 상세 연구 기둥
 │   ├─ MODEL_GUIDED_RESEARCH.md
 │   │   └─ V0→V1→V2 모델-실험 반복 방법론
+│   ├─ SHORTEST_PATH_PLAN.md
+│   │   └─ 첫 완결 연구 루프를 빠르게 만드는 병렬·파일럿 계획
 │   ├─ PAPERS.md
 │   │   └─ 핵심 논문별 결과·한계·연구 연결
 │   └─ EXPERIMENTS.md
@@ -107,6 +127,7 @@ R-E_Termite/
 ## 문서 바로가기
 
 - **[통합 연구계획](docs/MASTER_PLAN.md)** — 사회적 위장 → 분산 컴퓨팅 → Physical AI 전체 로드맵
+- **[최단경로 연구계획](docs/SHORTEST_PATH_PLAN.md)** — 소규모 파일럿 + 공개 데이터 V0로 첫 연구 루프를 빠르게 완성하는 계획
 - **[현재 연구 방향](docs/RESEARCH_DIRECTION.md)** — 기존 물류망·생식위계·우선순위 할당 상세 논리
 - **[모델 유도형 연구설계](docs/MODEL_GUIDED_RESEARCH.md)** — 공개 데이터 V0 → 자체 실측 V1 → 계산모형 반복 구조
 - **[연구 기록](docs/RESEARCH_LOG.md)** — 아이디어 변화와 주요 의사결정
