@@ -9,6 +9,8 @@
 - `docs/RESEARCH_DIRECTION.md`: 현재 확정된 연구 방향 정리
 - `docs/PAPERS.md`: 주요 논문별 핵심 내용과 우리 연구와의 연결
 - `docs/EXPERIMENTS.md`: 실험 설계 및 수행 기록
+- `analysis/`: AI 추적·네트워크·최적화 코드
+- `hardware/`: 관찰 챔버·카메라·센서 설계
 
 ---
 
@@ -31,6 +33,17 @@
 ---
 
 ## 기록
+
+### 2026-09-14 — 저장소 구조 재정리
+
+- 긴 연구 정리문을 `README.md` 하나에 모두 넣는 방식에서 분리형 구조로 변경.
+- `README.md`는 프로젝트 홈과 핵심 질문만 남김.
+- `docs/RESEARCH_DIRECTION.md`: 현재 연구 방향과 전체 논리.
+- `docs/PAPERS.md`: 핵심 선행연구의 결과·한계·연결.
+- `docs/EXPERIMENTS.md`: Phase 0~5 실험 계획.
+- `analysis/README.md`: AI/네트워크/최적화 분석 공간.
+- `hardware/README.md`: 관찰 챔버와 촬영 시스템 개발 공간.
+- 연구 기록은 앞으로 날짜별로 이 문서에 누적하기로 함.
 
 ### 2026-09 — 연구 방향 재정립
 
